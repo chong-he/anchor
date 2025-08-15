@@ -23,15 +23,30 @@ CMD=./target/release/anchor
 
 # Store all help strings in variables.
 general_cli=$($CMD --help)
+node_cli=$($CMD node --help)
+keygen_cli=$($CMD keygen --help)
+keysplit_cli=$($CMD keysplit --help)
+keysplit_onchain_cli=$($CMD keysplit onchain --help)
+keysplit_manual_cli=$($CMD keysplit manual --help)
 
 general=./help_general.md
+node=./help_node.md
+keygen=./help_keygen.md
+keysplit=./help_keysplit.md
+keysplit_onchain=./help_keysplit_onchain.md
+keysplit_manual=./help_keysplit_manual.md
 
 # create .md files
 write_to_file "$general_cli" "$general" "Anchor General Commands"
+write_to_file "$node_cli" "$node" "Node"
+write_to_file "$keygen_cli" "$keygen" "Key Generation"
+write_to_file "$keysplit_cli" "$keysplit" "Key Split"
+write_to_file "$keysplit_onchain_cli" "$keysplit_onchain" "Key Split (Onchain)"
+write_to_file "$keysplit_manual_cli" "$keysplit_manual" "Key Split (Manual)"
 
-#input 1 = $1 = files; input 2 = $2 = new files
-files=(./book/src/help_general.md ./book/src/help_bn.md ./book/src/help_vc.md ./book/src/help_vm.md ./book/src/help_vm_create.md ./book/src/help_vm_import.md ./book/src/help_vm_move.md)
-new_files=($general $bn $vc $vm $vm_create $vm_import $vm_move)
+# input 1 = $1 = files; input 2 = $2 = new files
+files=(./book/src/help_general.md ./book/src/help_node.md ./book/src/help_keygen.md ./book/src/help_keysplit.md ./book/src/help_keysplit_onchain.md ./book/src/help_keysplit_manual.md)
+new_files=($general $node $keygen $keysplit $keysplit_onchain $keysplit_manual)
 
 # function to check
 check() {
@@ -64,10 +79,9 @@ check ${files[2]} ${new_files[2]}
 check ${files[3]} ${new_files[3]}
 check ${files[4]} ${new_files[4]}
 check ${files[5]} ${new_files[5]}
-check ${files[6]} ${new_files[6]}
 
 # remove help files
-rm -f help_general.md help_bn.md help_vc.md help_am.md help_vm.md help_vm_create.md help_vm_import.md help_vm_move.md
+rm -f help_general.md help_node.md help_keygen.md help_keysplit.md help_keysplit_onchain.md help_keysplit_manual.md
 
 # only exit at the very end
 if [[ $changes == true ]]; then

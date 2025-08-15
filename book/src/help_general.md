@@ -1,0 +1,24 @@
+# Anchor General Commands
+
+```
+Usage: anchor [OPTIONS] <COMMAND>
+
+Commands:
+  node      SSV Validator client. Maintained by Sigma Prime.
+  keysplit  SSV Keysplitting Tool
+  keygen    RSA key generation tool. Outputs key to data directory.
+  help      Print this message or the help of the given subcommand(s)
+
+Options:
+  -d, --data-dir <DIR>             Used to specify a custom root data directory for the Anchor key and database.
+                                   Defaults to $HOME/.anchor/{network} where network is the value of the `network` flag
+                                   Note: Users should specify separate custom datadirs for different networks.
+      --network <NETWORK>          Name of the chain Anchor will validate. Mainnet is not supported. [default: hoodi]
+                                   [possible values: holesky, hoodi]
+  -t, --testnet-dir <DIR>          Path to directory containing eth2_testnet specs.
+      --debug-level <DEBUG_LEVEL>  Specifies the verbosity level used when emitting logs to the terminal [default:
+                                   INFO]
+  -h, --help                       Print help
+```
+
+<style> .content main {max-width:88%;} </style>
