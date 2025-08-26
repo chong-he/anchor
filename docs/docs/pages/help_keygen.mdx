@@ -1,0 +1,20 @@
+# Key Generation
+
+```
+RSA key generation tool. Outputs key to data directory.
+
+Usage: anchor keygen [OPTIONS]
+
+Options:
+  -d, --data-dir <DIR>                 Used to specify a custom root data directory for the Anchor key and database. Defaults to
+                                       $HOME/.anchor/{network} where network is the value of the `network` flag Note: Users should
+                                       specify separate custom datadirs for different networks.
+      --force                          Force file overwrite
+      --network <NETWORK>              Name of the chain Anchor will validate. Mainnet is not supported. [default: hoodi] [possible
+                                       values: holesky, hoodi]
+  -t, --testnet-dir <DIR>              Path to directory containing eth2_testnet specs.
+      --encrypt                        Enable password encryption. Password is read from terminal or via --password-file
+      --password-file <PASSWORD_FILE>  Path to a file containing the password to use
+      --debug-level <DEBUG_LEVEL>      Specifies the verbosity level used when emitting logs to the terminal [default: INFO]
+  -h, --help                           Print help
+```
