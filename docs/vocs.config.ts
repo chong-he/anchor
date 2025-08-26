@@ -64,9 +64,11 @@ export default defineConfig({
           {
             text: 'CLI Reference', link: '/cli', collapsed: true,
             items: [
-              { text: 'Node', link: '/cli-node' },
-              { text: 'Keygen', link: '/cli-keygen' },
-              { text: 'KeySplit', link: '/cli-keysplit' },
+              { text: 'Node', link: '/cli_node' },
+              { text: 'Keygen', link: '/cli_keygen' },
+              { text: 'KeySplit', link: '/cli_keysplit' },
+              { text: 'KeySplit (Manual)', link: '/cli_keysplit_manual' },
+              { text: 'KeySplit (Onchain)', link: '/cli_keysplit_onchain' },
             ]
           },
           { text: 'Metrics', link: '/metrics' },

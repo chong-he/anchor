@@ -26,12 +26,12 @@ keysplit_cli=$($CMD keysplit --help)
 keysplit_onchain_cli=$($CMD keysplit onchain --help)
 keysplit_manual_cli=$($CMD keysplit manual --help)
 
-general=./help_general.mdx
-node=./help_node.mdx
-keygen=./help_keygen.mdx
-keysplit=./help_keysplit.mdx
-keysplit_onchain=./help_keysplit_onchain.mdx
-keysplit_manual=./help_keysplit_manual.mdx
+general=./cli_general.mdx
+node=./cli_node.mdx
+keygen=./cli_keygen.mdx
+keysplit=./cli_keysplit.mdx
+keysplit_onchain=./cli_keysplit_onchain.mdx
+keysplit_manual=./cli_keysplit_manual.mdx
 
 # create .md files
 write_to_file "$general_cli" "$general" "Anchor General Commands"
@@ -42,7 +42,7 @@ write_to_file "$keysplit_onchain_cli" "$keysplit_onchain" "Key Split (Onchain)"
 write_to_file "$keysplit_manual_cli" "$keysplit_manual" "Key Split (Manual)"
 
 # input 1 = $1 = files; input 2 = $2 = new files
-files=(./docs/docs/pages/help_general.mdx ./docs/docs/pages/help_node.mdx ./docs/docs/pages/help_keygen.mdx ./docs/docs/pages/help_keysplit.mdx ./docs/docs/pages/help_keysplit_onchain.mdx ./docs/docs/pages/help_keysplit_manual.mdx)
+files=(./docs/docs/pages/cli_general.mdx ./docs/docs/pages/cli_node.mdx ./docs/docs/pages/cli_keygen.mdx ./docs/docs/pages/cli_keysplit.mdx ./docs/docs/pages/cli_keysplit_onchain.mdx ./docs/docs/pages/cli_keysplit_manual.mdx)
 new_files=($general $node $keygen $keysplit $keysplit_onchain $keysplit_manual)
 
 # function to check
@@ -69,7 +69,7 @@ check() {
 
 # define changes as false
 changes=false
-# call check function to check for each help file
+# call check function to check for each cli file
 check ${files[0]} ${new_files[0]}
 check ${files[1]} ${new_files[1]}
 check ${files[2]} ${new_files[2]}
@@ -77,8 +77,8 @@ check ${files[3]} ${new_files[3]}
 check ${files[4]} ${new_files[4]}
 check ${files[5]} ${new_files[5]}
 
-# remove help files
-rm -f help_general.mdx help_node.mdx help_keygen.mdx help_keysplit.mdx help_keysplit_onchain.mdx help_keysplit_manual.mdx
+# remove cli files
+rm -f cli_general.mdx cli_node.mdx cli_keygen.mdx cli_keysplit.mdx cli_keysplit_onchain.mdx cli_keysplit_manual.mdx
 
 # only exit at the very end
 if [[ $changes == true ]]; then
