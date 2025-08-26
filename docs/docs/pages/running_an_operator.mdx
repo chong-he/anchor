@@ -27,7 +27,7 @@ Save your public key as you'll need it for on-chain registration. **Back up your
 
 **Step 2: Register as an Operator on the SSV Network**
 
-To register an operator, follow the instructions for the official
+To register an operator, follow the instructions in the official
 [ssv docs](https://docs.ssv.network/operators/operator-management/registration).
 
 **Step 3: Configure and run your Anchor node**
@@ -41,7 +41,7 @@ mkdir -p ~/.anchor/hoodi
 mv encrypted_private_key.json ~/.anchor/hoodi
 ```
 
-Use the [CLI Reference](./cli.md) or `--help` to launch the node. If you use an encrypted key, you must specify the password via a password file or interactively input it when starting the node.
+Use the [CLI Reference](./cli) or `--help` to launch the node. If you use an encrypted key, you must specify the password via a password file or interactively input it when starting the node.
 
 ```bash
 anchor node \
@@ -55,4 +55,4 @@ anchor node \
 
 All options used in this example (except for the `password-file`) are actually used with the default values and can therefore be omitted, or adjusted to your setup.
 
-The Anchor node will use the same ports as used by Go-SSV unless explicitly overridden. See [Advanced Networking](./advanced_networking.md) for more information
+The Anchor node will use the same ports as used by Go-SSV unless explicitly overridden. See [Advanced Networking](./advanced_networking) for more information
